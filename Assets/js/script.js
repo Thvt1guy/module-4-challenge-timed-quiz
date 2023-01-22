@@ -2,7 +2,6 @@
 var button = document.querySelector(".button");
 var headingText = document.querySelector(".heading");
 var questionText = document.querySelector(".question");
-// var newButton = "button";
 var buttonMade;
 
 
@@ -19,7 +18,7 @@ function buttonClick(event) {
     for (var i = 0; i < 4; i++) {
         
         buttonMade = document.createElement("button");
-        
+
         document.body.appendChild(buttonMade);
         
         buttonMade.textContent = "Choice";
@@ -43,9 +42,7 @@ function buttonClick(event) {
     choice3.textContent = "How To Make Logos";
     choice4.textContent = "None of the above";
     // when i click any button i need to go to question 2
-    // if (choice1 || choice2 || choice3 || choice4 === ){
-    //     function question2;
-    // }
+    
     function question2(event) {
         event.preventDefault();
         headingText.textContent = "Question 2.";
@@ -56,12 +53,14 @@ function buttonClick(event) {
         choice3.textContent = "Cascading Style Sheets";
         choice4.textContent = "Cool Socks Society";
         console.log("question2");
+    
     }
     
     choice1.addEventListener("click", question2);
     choice2.addEventListener("click", question2);
     choice3.addEventListener("click", question2);
     choice4.addEventListener("click", question2);
+    
     
     function question3(event) {
         event.preventDefault();
@@ -96,3 +95,4 @@ function buttonClick(event) {
     choice3.addEventListener("click", question4);
     choice4.addEventListener("click", question4);
 }
+
