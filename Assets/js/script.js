@@ -95,4 +95,3 @@ function buttonClick(event) {
     choice3.addEventListener("click", question4);
     choice4.addEventListener("click", question4);
 }
-
