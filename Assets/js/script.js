@@ -53,7 +53,52 @@ function buttonClick(event) {
         choice3.textContent = "Cascading Style Sheets";
         choice4.textContent = "Cool Socks Society";
         console.log("question2");
+
+        function question3(event) {
+            event.preventDefault();
+            headingText.textContent = "Question 3.";
+            questionText.textContent = "which is an example of a HTML tag/element?";
     
+            choice1.textContent = "<p>";
+            choice2.textContent = "(p)";
+            choice3.textContent = "[p]";
+            choice4.textContent = "{p}";
+            console.log("question3");
+
+            function question4(event) {
+                event.preventDefault();
+                headingText.textContent = "Question 4.";
+                questionText.textContent = "";
+                
+                choice1.textContent = " ";
+                choice2.textContent = " ";
+                choice3.textContent = " ";
+                choice4.textContent = " ";
+                console.log("question4");   
+            }
+
+            choice1.removeEventListener("click", question3);
+            choice2.removeEventListener("click", question3);
+            choice3.removeEventListener("click", question3);
+            choice4.removeEventListener("click", question3);
+
+            choice1.addEventListener("click", question4);
+            choice2.addEventListener("click", question4);
+            choice3.addEventListener("click", question4);
+            choice4.addEventListener("click", question4);
+
+        }
+
+        choice1.removeEventListener("click", question2);
+        choice2.removeEventListener("click", question2);
+        choice3.removeEventListener("click", question2);
+        choice4.removeEventListener("click", question2);
+
+    
+        choice1.addEventListener("click", question3);
+        choice2.addEventListener("click", question3);
+        choice3.addEventListener("click", question3);
+        choice4.addEventListener("click", question3);
     }
     
     choice1.addEventListener("click", question2);
@@ -62,36 +107,7 @@ function buttonClick(event) {
     choice4.addEventListener("click", question2);
     
     
-    function question3(event) {
-        event.preventDefault();
-        headingText.textContent = "Question 3.";
-        questionText.textContent = "which is an example of a HTML tag/element?";
-
-        choice1.textContent = "<p>";
-        choice2.textContent = "(p)";
-        choice3.textContent = "[p]";
-        choice4.textContent = "{p}";
-        console.log("question3");
-    }
-
-    choice1.addEventListener("click", question3);
-    choice2.addEventListener("click", question3);
-    choice3.addEventListener("click", question3);
-    choice4.addEventListener("click", question3);
     
-    function question4(event) {
-        event.preventDefault();
-        headingText.textContent = "Question 4.";
-        questionText.textContent = "";
-        
-        choice1.textContent = " ";
-        choice2.textContent = " ";
-        choice3.textContent = " ";
-        choice4.textContent = " ";
-        console.log("question4");   
-    }
-    choice1.addEventListener("click", question4);
-    choice2.addEventListener("click", question4);
-    choice3.addEventListener("click", question4);
-    choice4.addEventListener("click", question4);
+    
+    
 }
