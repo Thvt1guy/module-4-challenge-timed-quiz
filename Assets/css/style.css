@@ -1,6 +1,11 @@
-body{
+/* body{
     display: flex;
     align-items: center;
     padding-left: 40%;
     padding-right: 30%;
+    } */
+
+    #timer{
+        display: flex;
+        margin: auto;
     }
