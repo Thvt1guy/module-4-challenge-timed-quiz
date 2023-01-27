@@ -1,4 +1,4 @@
- var homePage = document.querySelector('#homePage');
+var homePage = document.querySelector('#homePage');
 
 var startButton = document.querySelector('.start-btn');
 var timerDiv = document.querySelector('.timerDiv');
@@ -102,16 +102,26 @@ function startButtonClick(event) {
 function quizEnd(){
     clearInterval(timerInt);
     setAllNone();
-    var myArray = [];
-    var myVar = JSON.parse(localStorage.getItem('storedScore'));
+    var userData = JSON.parse(localStorage.getItem('storedScore')) ?? [];
+    var orderedLi = document.createElement('ol');
+    var scoresEl = document.getElementById('scores');
+    for (var i = 0; i < userData.length; i++) {
+        var listItem = document.createElement('li');
+
+        listItem.textContent = userData[i].name;
+
+        orderedLi.append(listItem);
+      }
+
+
     var userInit = prompt('Score: ' + userScore + ' Enter initials below: ');
     var userObj = {
         name: userInit,
         score: userScore
     }
 
-    myVar.push(userObj);
+    userData.push(userObj);
 
-    localStorage.setItem('storedScore', JSON.stringify(myVar));
-    console.log(userObj);
+    localStorage.setItem('storedScore', JSON.stringify(userData));
+    scoresEl.append(orderedLi);
 }
