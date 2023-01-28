@@ -9,6 +9,7 @@ var quest2 = document.querySelector('#quest2');
 var quest3 = document.querySelector('#quest3');
 var quest4 = document.querySelector('#quest4');
 var quest5 = document.querySelector('#quest5');
+var highScores = document.querySelector('#scores');
 var answerButtons = document.querySelectorAll('.answer');
 var correct = document.querySelectorAll('.correct');
 var timerInt;
@@ -26,6 +27,7 @@ function setAllNone() {
     quest3.style.display = "none";
     quest4.style.display = "none";
     quest5.style.display = "none";
+    highScores.style.display = "none";
 }
 
 setAllNone();
@@ -102,25 +104,27 @@ function startButtonClick(event) {
 function quizEnd(){
     clearInterval(timerInt);
     setAllNone();
+    highScores.style.display = "initial";
     var userData = JSON.parse(localStorage.getItem('storedScore')) ?? [];
+    var userInit = prompt('Score: ' + userScore + ' Enter Name below: ');
+
     var orderedLi = document.createElement('ol');
     var scoresEl = document.getElementById('scores');
-    for (var i = 0; i < userData.length; i++) {
-        var listItem = document.createElement('li');
 
-        listItem.textContent = userData[i].name;
-
-        orderedLi.append(listItem);
-      }
-
-
-    var userInit = prompt('Score: ' + userScore + ' Enter initials below: ');
     var userObj = {
         name: userInit,
         score: userScore
     }
-
+    
     userData.push(userObj);
+
+    for (var i = 0; i < userData.length; i++) {
+        var listItem = document.createElement('li');
+
+        listItem.textContent = 'Name: ' + userData[i].name + '  Score: ' + userData[i].score;
+
+        orderedLi.append(listItem);
+      }
 
     localStorage.setItem('storedScore', JSON.stringify(userData));
     scoresEl.append(orderedLi);
