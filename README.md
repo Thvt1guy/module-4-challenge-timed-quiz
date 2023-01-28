@@ -2,7 +2,7 @@
 # Module 04 Challenge Web APIs: Code Quiz
 ## -->[Link to the Deployed page](https://thvt1guy.github.io/module-4-challenge-timed-quiz/)<--
 
-![image](../module-4-challenge-timed-quiz/Assets/Images/websiteImage.png)
+![image](./module-4-challenge-timed-quiz/Assets/Images/websiteImage.png)
 
 ## Coded from scratch
 - When the correct answer is click +1 is added to score
